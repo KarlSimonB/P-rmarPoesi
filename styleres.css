@@ -11,15 +11,11 @@ h1 {
 
 
 .logo {
-    border-radius: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     padding: 5px;
-    width: 170px; /* Adjust the width as needed */
+    width: 100px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    /* border: 1px solid #ddd; */
-    /* border-radius: 4px; */
-    /* padding: 5px; */
-    /* width: 100px; Adjust the width as needed */
-    /* height: auto; Maintain aspect ratio */
 }
 
 header {
@@ -27,7 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgba(224, 224, 224, 0.548);
+    background-color: #f8f8f8;
 }
 
 .menu-toggle {
