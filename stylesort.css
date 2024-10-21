@@ -1,0 +1,104 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.logo {
+    border-radius: 100%;
+    padding: 5px;
+    width: 170px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(224, 224, 224, 0.548);
+}
+
+.menu-toggle {
+    opacity: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex; /* Show links by default on larger screens */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-left: 20px;
+}
+
+/* Links in nav desktop */
+.nav-list a {
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+/* Mobile Navigation Popup Menu Styles */
+.nav-list-mobile {
+    display: none; /* Hide links by default */
+    position: absolute; /* Position it over the content */
+    top: 60px; /* Adjust based on your header height */
+    left: 0;
+    right: 0;
+    background-color: #d3d3d3; /* Light gray background color */
+    z-index: 1; /* Ensure it covers other content */
+    flex-direction: column; /* Stack links vertically */
+    padding: 10px 0; /* Add some vertical padding */
+}
+
+/* Display Navigation Links on Checkbox Checked */
+.menu-toggle:checked + .hamburger + .nav-list-mobile {
+    display: flex; /* Show links when the menu is toggled */
+}
+
+/* Link Styles in Mobile Menu */
+.nav-list-mobile li {
+    padding: 10px 20px; /* Add padding for the links */
+}
+
+.nav-list-mobile a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+    display: block; /* Make the entire area clickable */
+}
+
+/* Saras påhitt */
+.welcome-text {
+
+
+footer {
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f8f8f8;
+}
+
+img {
+    padding-right: 15px;
+}

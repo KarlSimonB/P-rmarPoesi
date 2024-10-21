@@ -153,6 +153,11 @@ nav {
     padding-left: 20px;
 }
 
+.linkhtml3 {
+    text-decoration: none;
+    color: black;
+}
+
 /* Scrollbar function */
 .scrollbar-genre-nav {
     padding-left: 10px;
@@ -249,6 +254,72 @@ nav {
 
     .hamburger {
         display: block; /* Show hamburger menu */
+    }
+
+    .welcome-text {
+        padding: 0;
+        margin: 0;
+        font-size: x-large;
+      }
+      .main-text {
+          margin: 30px 0px 80px 35px;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid #ffffff;
+        padding-left: 10px;
+        margin:2px;
+        font-size: 1em;
+        user-select: none; /* Prevent text selection */
+        outline: none; /* Remove outline */
+      }
+      /* SARAS KLOKHETER */
+
+    /* The parent box containg the items */
+    .box-content1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    } 
+
+    .linkhtml3 {
+        
+    }
+
+    .box1-content-text{
+    font-size: x-large;
+    padding-left: 20px;
+    }
+
+    /* Scrollbar function */
+    .scrollbar-genre-nav {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    width: infinite;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    justify-content: flex-start;
+    list-style-type: none;
+    }
+
+    /* The text UL list items */
+    .genre-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image:  linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808));
+    border-radius: 5px;
+    padding: 20px 50px;
+    margin: 0px 8px 0px 0px;
+    font-size: x-large;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
     }
 }
 
