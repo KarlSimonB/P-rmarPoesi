@@ -1,5 +1,5 @@
+@charset "UTF-8";
 /* Variabels and mixins, kommer hålla dem markerade då vi måste klippa in dem i sass och tailwind filer */
-
 /* $primarycolor rgb(224, 224, 224); */
 /* $primarycolor rgb(224, 224, 224); */
 /* $primarycolor rgb(224, 224, 224); */
@@ -8,99 +8,96 @@
 /* $primarycolor rgb(224, 224, 224); */
 /* $primarycolor rgb(224, 224, 224); */
 /* $primarycolor rgb(224, 224, 224); */
-
-
 /* @mixins layout1 { */
-    /* display:flex; */
-    /* flex-direction: column; */
+/* display:flex; */
+/* flex-direction: column; */
 /* } */
-
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 .logo {
-    border-radius: 100%;
-    padding: 5px;
-    width: 170px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+  border-radius: 100%;
+  padding: 5px;
+  width: 170px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(224, 224, 224, 0.548);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(224, 224, 224, 0.548);
 }
 
 .menu-toggle {
-    opacity: 0;
+  opacity: 0;
 }
 
 nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
-    list-style: none;
-    display: flex; /* Show links by default on larger screens */
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex; /* Show links by default on larger screens */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* Links in nav desktop */
 .nav-list a {
-    text-decoration: none;
-    color: rgb(49, 49, 49);
-    font-size: x-large;
-    font-weight: bold;
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-size: x-large;
+  font-weight: bold;
 }
 
 /* Hamburger Menu Styles */
 .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 50px;
-    cursor: pointer;
-    padding: 20px;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
 }
 
 /* Mobile Navigation Popup Menu Styles */
 .nav-list-mobile {
-    display: none; /* Hide links by default */
-    position: absolute; /* Position it over the content */
-    top: 60px; /* Adjust based on your header height */
-    left: 0;
-    right: 0;
-    background-color: #d3d3d3; /* Light gray background color */
-    z-index: 1; /* Ensure it covers other content */
-    flex-direction: column; /* Stack links vertically */
-    padding: 10px 0; /* Add some vertical padding */
+  display: none; /* Hide links by default */
+  position: absolute; /* Position it over the content */
+  top: 60px; /* Adjust based on your header height */
+  left: 0;
+  right: 0;
+  background-color: #d3d3d3; /* Light gray background color */
+  z-index: 1; /* Ensure it covers other content */
+  flex-direction: column; /* Stack links vertically */
+  padding: 10px 0; /* Add some vertical padding */
 }
 
 /* Display Navigation Links on Checkbox Checked */
 .menu-toggle:checked + .hamburger + .nav-list-mobile {
-    display: flex; /* Show links when the menu is toggled */
+  display: flex; /* Show links when the menu is toggled */
 }
 
 /* Link Styles in Mobile Menu */
 .nav-list-mobile li {
-    padding: 10px 20px; /* Add padding for the links */
+  padding: 10px 20px; /* Add padding for the links */
 }
 
 .nav-list-mobile a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
-    display: block; /* Make the entire area clickable */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark text color */
+  display: block; /* Make the entire area clickable */
 }
 
 /* Saras påhitt */
@@ -108,58 +105,177 @@ nav {
   padding: 0;
   margin: 0;
 }
+
 .main-text {
-    margin: 30px 0px 80px 35px;
+  margin: 30px 0px 80px 35px;
 }
+
 /* Saras påhitt  */
-
-
 /* Quote Styles */
 .quote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ffffff;
+  padding-left: 10px;
+  margin: 2px;
+  font-size: 1.3em;
+  user-select: none; /* Prevent text selection */
+  outline: none; /* Remove outline */
+}
+
+.box1, .box2, .box3, .resbox1, .resbox2, .resbox3 {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 10px 1px rgb(163, 163, 163);
+  padding: 15px;
+  margin: 0px 50px 50px 50px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* SARAS KLOKHETER */
+/* The parent box containg the items */
+.box-content1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+.box1-content-text {
+  font-size: xx-large;
+  padding-left: 20px;
+}
+
+.linkhtml3 {
+  text-decoration: none;
+  color: black;
+}
+
+/* Scrollbar function */
+.scrollbar-genre-nav {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  width: infinite;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  justify-content: flex-start;
+  list-style-type: none;
+}
+
+/* The text UL list items */
+.genre-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808));
+  border-radius: 5px;
+  padding: 20px 50px;
+  margin: 0px 8px 0px 0px;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* SARAS KLOKHETER */
+.box-image, .resbox1, .resbox2, .resbox3 {
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between image and text */
+}
+
+.box-content {
+  flex: 1; /* Allow text to take remaining space */
+}
+
+.box-content h2,
+.small-box-content h2 {
+  margin: 0 0 10px 0; /* Spacing for title */
+}
+
+/* Small Box Styles */
+.small-boxes {
+  display: flex;
+  justify-content: space-between; /* Space the boxes evenly */
+  margin: 20px;
+}
+
+.small-box1, .small-box2 {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: calc(50% - 10px); /* Set width to half and account for spacing */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.small-box-image {
+  width: 80px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between image and text */
+}
+
+.small-box-content {
+  flex: 1; /* Allow text to take remaining space */
+}
+
+/* Responsive Styles for Small Boxes */
+@media (max-width: 768px) {
+  .small-boxes {
+    flex-direction: column; /* Stack small boxes vertically */
+    margin: 0 15px; /* Add horizontal margin for equal spacing */
+  }
+  .small-box1, .small-box2 {
+    width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
+    margin: 0 auto 15px auto; /* Center the box and add bottom margin */
+  }
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block; /* Show hamburger menu */
+  }
+  .welcome-text {
+    padding: 0;
+    margin: 0;
+    font-size: x-large;
+  }
+  .main-text {
+    margin: 30px 0px 80px 35px;
+  }
+  .quote {
     font-style: italic;
     color: #555;
     border-left: 4px solid #ffffff;
     padding-left: 10px;
-    margin:2px;
-    font-size: 1.3em;
+    margin: 2px;
+    font-size: 1em;
     user-select: none; /* Prevent text selection */
     outline: none; /* Remove outline */
-}
-
-.box1 , .box2 , .box3 , .resbox1 , .resbox2, .resbox3{
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 0px 10px 1px rgb(163, 163, 163);
-    padding: 15px;
-    margin: 0px 50px 50px 50px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-
-/* SARAS KLOKHETER */
-
-/* The parent box containg the items */
-.box-content1 {
+  }
+  /* SARAS KLOKHETER */
+  /* The parent box containg the items */
+  .box-content1 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     height: auto;
-}
-
-.box1-content-text{
-    font-size: xx-large;
+  }
+  .box1-content-text {
+    font-size: x-large;
     padding-left: 20px;
-}
-
-.linkhtml3 {
-    text-decoration: none;
-    color: black;
-}
-
-/* Scrollbar function */
-.scrollbar-genre-nav {
+  }
+  /* Scrollbar function */
+  .scrollbar-genre-nav {
     padding-left: 10px;
     display: flex;
     flex-direction: row;
@@ -168,10 +284,9 @@ nav {
     scrollbar-width: thin;
     justify-content: flex-start;
     list-style-type: none;
-}
-
-/* The text UL list items */
-.genre-box {
+  }
+  /* The text UL list items */
+  .genre-box {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,155 +298,19 @@ nav {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
+  }
 }
-
-/* SARAS KLOKHETER */
-
-.box-image , .resbox1 , .resbox2, .resbox3 {
-    width: 100px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
-}
-
-.box-content {
-    flex: 1; /* Allow text to take remaining space */
-}
-
-.box-content h2,
-.small-box-content h2 {
-    margin: 0 0 10px 0; /* Spacing for title */
-}
-
-/* Small Box Styles */
-.small-boxes {
-    display: flex;
-    justify-content: space-between; /* Space the boxes evenly */
-    margin: 20px;
-}
-
-.small-box1 , .small-box2 {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 15px;
-    width: calc(50% - 10px); /* Set width to half and account for spacing */
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.small-box-image {
-    width: 80px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
-}
-
-.small-box-content {
-    flex: 1; /* Allow text to take remaining space */
-}
-
-/* Responsive Styles for Small Boxes */
-@media (max-width: 768px) {
-    .small-boxes {
-        flex-direction: column; /* Stack small boxes vertically */
-        margin: 0 15px; /* Add horizontal margin for equal spacing */
-    }
-
-    .small-box1 , .small-box2 {
-        width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
-        margin: 0 auto 15px auto; /* Center the box and add bottom margin */
-    }
-}
-
-
-
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .nav-list {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger menu */
-    }
-
-    .welcome-text {
-        padding: 0;
-        margin: 0;
-        font-size: x-large;
-      }
-      .main-text {
-          margin: 30px 0px 80px 35px;
-      }
-
-      .quote {
-        font-style: italic;
-        color: #555;
-        border-left: 4px solid #ffffff;
-        padding-left: 10px;
-        margin:2px;
-        font-size: 1em;
-        user-select: none; /* Prevent text selection */
-        outline: none; /* Remove outline */
-      }
-      /* SARAS KLOKHETER */
-
-    /* The parent box containg the items */
-    .box-content1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    height: auto;
-    } 
-
-    .linkhtml3 {
-        
-    }
-
-    .box1-content-text{
-    font-size: x-large;
-    padding-left: 20px;
-    }
-
-    /* Scrollbar function */
-    .scrollbar-genre-nav {
-    padding-left: 10px;
-    display: flex;
-    flex-direction: row;
-    width: infinite;
-    overflow-x: scroll;
-    scrollbar-width: thin;
-    justify-content: flex-start;
-    list-style-type: none;
-    }
-
-    /* The text UL list items */
-    .genre-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-image:  linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808));
-    border-radius: 5px;
-    padding: 20px 50px;
-    margin: 0px 8px 0px 0px;
-    font-size: x-large;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    }
-}
-
 footer {
-    margin-top: -15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: #f8f8f8;
+  margin-top: -15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #f8f8f8;
 }
 
 img {
-    padding-right: 15px;
+  padding-right: 15px;
 }
+
+/*# sourceMappingURL=style.css.map */
