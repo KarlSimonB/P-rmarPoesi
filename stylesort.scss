@@ -1,221 +1,231 @@
-$primarycolor:black;
-$primarybackground:white;
-$secondarybackground:#e0e0e08c;
+@charset "UTF-8";
+// All variables and mixins
+// ********************************** 
 
+$primarycolor: black;     
+$primarybackground: white;
+$secondarybackground: #e0e0e08c;
+$boxshadow: 0px 0px 10px 2px grey;
 
 @mixin layout-1 {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
 }
 
 @mixin layout-2 {
-    display: flex;
-    flex-direction: row;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
 }
 
 @mixin genre-boxes {
-    @include layout-1();
-    font-family: Arial, sans-serif;
-    background-color: $secondarybackground;
-
+  @include layout-1();
+  font-family: Arial, sans-serif;
+  background-color: $secondarybackground;
+  box-shadow: $boxshadow;
+  margin: 30px 20px 30px 20px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
+@mixin bok-box {
+  @include layout-2();
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-y:scroll;
+}
+
+// Style for the body and all content
+// **********************************
+
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(224, 224, 224, 0.548);
+
+  .logo {
+    border-radius: 100%;
+    padding: 5px;
+    width: 170px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .menu-toggle {
+    opacity: 0;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex; /* Show links by default on larger screens */
     margin: 0;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin-left: 20px;
+  }
+
+  /* Links in nav desktop */
+  .nav-list a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-size: x-large;
+  font-weight: bold;
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+  }
+
+  /* Mobile Navigation Popup Menu Styles */
+  .nav-list-mobile {
+  display: none; /* Hide links by default */
+  position: absolute; /* Position it over the content */
+  top: 60px; /* Adjust based on your header height */
+  left: 0;
+  right: 0;
+  background-color: #d3d3d3; /* Light gray background color */
+  z-index: 1; /* Ensure it covers other content */
+  flex-direction: column; /* Stack links vertically */
+  padding: 10px 0; /* Add some vertical padding */
+  }
+
+  /* Display Navigation Links on Checkbox Checked */
+  .menu-toggle:checked + .hamburger + .nav-list-mobile {
+  display: flex; /* Show links when the menu is toggled */
+  }
+
+  /* Link Styles in Mobile Menu */
+  .nav-list-mobile li {
+  padding: 10px 20px; /* Add padding for the links */
+  }
+
+  .nav-list-mobile a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+    display: block; /* Make the entire area clickable */
+  }
+}
+
+
+main {
+
     @include layout-1;
-  
+    background-color: $primarybackground;
+    justify-content: space-between;
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #e0e0e08c;
+    .sort-main-text {
+      margin:50px;
 
-        .logo {
-            border-radius: 100%;
-            padding: 5px;
-            width: 170px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-          }
-          
-          .menu-toggle {
-            opacity: 0;
-          }
-          
-          nav {
-            display: flex;
-            align-items: center;
-          }
-          
-          .nav-list {
-            list-style: none;
-            display: flex; /* Show links by default on larger screens */
-            margin: 0;
-            padding: 0;
-          }
-          
-          .nav-list li {
-            margin-left: 20px;
-          }
-          
-          /* Links in nav desktop */
-          .nav-list a {
-            text-decoration: none;
-            color: rgb(49, 49, 49);
-            font-size: x-large;
-            font-weight: bold;
-          }
-          
-          /* Hamburger Menu Styles */
-          .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 50px;
-            cursor: pointer;
-            padding: 20px;
-          }
-          
-          /* Mobile Navigation Popup Menu Styles */
-          .nav-list-mobile {
-            display: none; /* Hide links by default */
-            position: absolute; /* Position it over the content */
-            top: 60px; /* Adjust based on your header height */
-            left: 0;
-            right: 0;
-            background-color: #d3d3d3; /* Light gray background color */
-            z-index: 1; /* Ensure it covers other content */
-            flex-direction: column; /* Stack links vertically */
-            padding: 10px 0; /* Add some vertical padding */
-          }
-          
-          /* Display Navigation Links on Checkbox Checked */
-          .menu-toggle:checked + .hamburger + .nav-list-mobile {
-            display: flex; /* Show links when the menu is toggled */
-          }
-          
-          /* Link Styles in Mobile Menu */
-          .nav-list-mobile li {
-            padding: 10px 20px; /* Add padding for the links */
-          }
-          
-          .nav-list-mobile a {
-            text-decoration: none; /* Remove underline */
-            color: #333; /* Dark text color */
-            display: block; /* Make the entire area clickable */
-          }
-          
+      h1 {
+        margin-bottom: 1px;
+        font-size: xx-large;
+      }
+      
+      .paragraf-1 {
+        margin-top: 0%;
+      }
     }
 
-    main {
-        @include layout-1;
-        background-color: $primarybackground;
+    article {
 
-        .sort-main-text {
-            margin: 50px;
-        }
-  
+      .sortiment {
+        text-align: center
+      }
 
-  
-  /* Responsive Styles for Small Boxes */
-  @media (max-width: 768px) {
-    .small-boxes {
+      .boxes {
+        @include layout-1();
+        @include genre-boxes;
+        list-style-type: none;
+        
+      }
+
+      .bokbox {
+        @include layout-2();
+        @include bok-box();
+
+      }
+
+      li {
+        @include layout-2();
+        list-style-type: none;
+        width: 120px;
+        margin: 5px;
+        padding: 1px;
+      }
+
+      img {
+        width: 120px;
+      }
+    }
+
+  }
+
+footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: $secondarybackground;
+}
+
+
+
+/* Responsive Styles for Small Boxes */
+@media (max-width: 768px) {
+  .small-boxes {
       flex-direction: column; /* Stack small boxes vertically */
       margin: 0 15px; /* Add horizontal margin for equal spacing */
-      margin-right: 50px;
-      margin-left: 50px;
-    }
-    .small-box1, .small-box2 {
+  }
+
+  .small-box1 , .small-box2 {
       width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
       margin: 0 auto 15px auto; /* Center the box and add bottom margin */
-  
-    }
   }
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .nav-list {
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-list {
       display: none; /* Hide links by default on mobile */
       flex-direction: column;
-    }
-    .hamburger {
+  }
+
+  .hamburger {
       display: block; /* Show hamburger menu */
-    }
-    .welcome-text {
+  }
+
+  .welcome-text {
       padding: 0;
       margin: 0;
       font-size: x-large;
     }
     .main-text {
-      margin: 30px 0px 80px 35px;
+        margin: 30px 0px 80px 35px;
     }
-    .quote {
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #ffffff;
-      padding-left: 10px;
-      margin: 2px;
-      font-size: 1em;
-      user-select: none; /* Prevent text selection */
-      outline: none; /* Remove outline */
-    }
-    /* SARAS KLOKHETER */
-    /* The parent box containg the items */
-    .box-content1 {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
-      height: auto;
-    }
-    .box1-content-text {
-      font-size: x-large;
-      padding-left: 20px;
-    }
-    /* Scrollbar function */
-    .scrollbar-genre-nav {
-      padding-left: 10px;
-      display: flex;
-      flex-direction: row;
-      width: infinite;
-      overflow-x: scroll;
-      scrollbar-width: thin;
-      justify-content: flex-start;
-      list-style-type: none;
-    }
-    /* The text UL list items */
-    .genre-box {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      /*background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808)); */
-      border-radius: 5px;
-      padding: 20px 50px;
-      margin: 0px 8px 0px 0px;
-      font-size: x-large;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
 }
-  footer {
-    margin-right: 30px;
-    margin-left: 45px;
-    margin-top: -15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    background-color: #f8f8f8;
-  }
-  
-  img {
-    padding-right: 15px;
-  }
-  
-  /*# sourceMappingURL=style.css.map */
-  
+
+

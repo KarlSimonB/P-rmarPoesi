@@ -1,17 +1,5 @@
 @charset "UTF-8";
-/* Variabels and mixins, kommer hålla dem markerade då vi måste klippa in dem i sass och tailwind filer */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* $primarycolor rgb(224, 224, 224); */
-/* @mixins layout1 { */
-/* display:flex; */
-/* flex-direction: column; */
-/* } */
+
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
@@ -183,7 +171,7 @@ nav {
 }
 
 /* SARAS KLOKHETER */
-.box-image, .resbox1, .resbox2, .resbox3, .calendar-box {
+.box-image, .resbox1, .resbox2, .resbox3 {
   width: 100px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
   margin-right: 15px; /* Space between image and text */
