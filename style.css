@@ -107,9 +107,7 @@ nav {
   padding-left: 10px;
   margin: 2px;
   font-size: 1.3em;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none; /* Prevent text selection */
+  user-select: none; /* Prevent text selection */
   outline: none; /* Remove outline */
 }
 
@@ -156,11 +154,13 @@ nav {
 }
 
 /* The text UL list items */
-.genre-box {
+.genre-box1 , .genre-box2 , .genre-box3 , .genre-box4 , .genre-box5 , .genre-box6 , .genre-box7 , .genre-box8 , .genre-box9  {
+  color: rgb(247, 191, 233);
+  text-shadow: 1px 1px 2px black;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808));
+  /*background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808)); */
   border-radius: 5px;
   padding: 20px 50px;
   margin: 0px 8px 0px 0px;
@@ -169,6 +169,39 @@ nav {
   font-weight: bold;
   text-align: center;
 }
+
+.genre-box1 {
+  background-image: url("Sources/horror1-transformed.jpeg");
+}
+
+.genre-box2 {
+  background-image: url(Sources/thriller-transformed.jpeg);
+}
+
+.genre-box3 {
+  background-image: url(Sources/romance.jpg);
+}
+.genre-box4 {
+  background-image: url(Sources/drama.jpg);
+}
+.genre-box5 {
+  background-image: url(Sources/crime.jpg);
+}
+.genre-box6 {
+  background-image: url(Sources/scifi.jpg);
+}
+.genre-box7 {
+  background-image: url(Sources/comedy.jpg);
+}
+.genre-box8 {
+  background-image: url(Sources/history.jpg);
+}
+.genre-box9 {
+  background-image: url(Sources/poetic.jpg);
+}
+
+
+
 
 /* SARAS KLOKHETER */
 .box-image, .resbox1, .resbox2, .resbox3 {
@@ -194,6 +227,8 @@ nav {
 }
 
 .small-box1, .small-box2 {
+  margin-right: 30px;
+  margin-left: 30px;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
@@ -218,10 +253,13 @@ nav {
   .small-boxes {
     flex-direction: column; /* Stack small boxes vertically */
     margin: 0 15px; /* Add horizontal margin for equal spacing */
+    margin-right: 50px;
+    margin-left: 50px;
   }
   .small-box1, .small-box2 {
     width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
     margin: 0 auto 15px auto; /* Center the box and add bottom margin */
+
   }
 }
 /* Media Queries */
@@ -248,9 +286,7 @@ nav {
     padding-left: 10px;
     margin: 2px;
     font-size: 1em;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none; /* Prevent text selection */
+    user-select: none; /* Prevent text selection */
     outline: none; /* Remove outline */
   }
   /* SARAS KLOKHETER */
@@ -282,7 +318,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808));
+    /*background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808)); */
     border-radius: 5px;
     padding: 20px 50px;
     margin: 0px 8px 0px 0px;
@@ -293,14 +329,18 @@ nav {
   }
 }
 footer {
+  margin-right: 30px;
+  margin-left: 45px;
   margin-top: -15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+
   background-color: #f8f8f8;
 }
 
 img {
   padding-right: 15px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

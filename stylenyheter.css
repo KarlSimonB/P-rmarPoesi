@@ -1,208 +1,146 @@
-/* Global Styles */
+// Variabler
+$primary-color: rgb(224, 224, 224);
+$secondary-color: #f9f9f9;
+$border-color: #ccc;
+
+// Global Styles
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 .logo {
-    /* border: 1px solid #ddd; */
-    border-radius: 100%;
-    padding: 5px;
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+  border-radius: 100%;
+  padding: 5px;
+  width: 150px;
+  height: auto;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgb(224, 224, 224);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $primary-color;
 }
 
 .menu-toggle {
-    opacity: 0;
+  opacity: 0;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-}
+  display: flex;
+  align-items: center;
 
-.nav-list {
+  .nav-list {
+    @extend ul;
     list-style: none;
-    display: flex; /* Show links by default on larger screens */
-    margin: 0;
-    padding: 0;
+    display: flex;
+
+    li {
+      margin-left: 20px;
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+    }
+  }
 }
 
-.nav-list li {
-    margin-left: 20px;
-}
-
-/* Links in nav desktop */
-.nav-list a {
-    text-decoration: none;
-    color: #333;
-}
-
-/* Hamburger Menu Styles */
+// Hamburger Menu Styles
 .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-/* Mobile Navigation Popup Menu Styles */
+// Mobile Navigation Popup Menu Styles
 .nav-list-mobile {
-    display: none; /* Hide links by default */
-    position: absolute; /* Position it over the content */
-    top: 60px; /* Adjust based on your header height */
-    left: 0;
-    right: 0;
-    background-color: #d3d3d3; /* Light gray background color */
-    z-index: 1; /* Ensure it covers other content */
-    flex-direction: column; /* Stack links vertically */
-    padding: 10px 0; /* Add some vertical padding */
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #d3d3d3;
+  z-index: 1;
+  flex-direction: column;
+  padding: 10px 0;
+
+  li {
+    padding: 10px 20px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+  }
 }
 
-/* Display Navigation Links on Checkbox Checked */
+// Display Navigation Links on Checkbox Checked
 .menu-toggle:checked + .hamburger + .nav-list-mobile {
-    display: flex; /* Show links when the menu is toggled */
+  display: flex;
 }
 
-/* Link Styles in Mobile Menu */
-.nav-list-mobile li {
-    padding: 10px 20px; /* Add padding for the links */
-}
-
-.nav-list-mobile a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
-    display: block; /* Make the entire area clickable */
-}
-
-/* Quote Styles */
+// Quote Styles
 .quote {
-    font-style: italic;
-    color: #555;
-    border-left: 4px solid #ffffff;
-    padding-left: 10px;
-    margin: 20px 0;
-    font-size: 1.2em;
-    user-select: none; /* Prevent text selection */
-    outline: none; /* Remove outline */
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ffffff;
+  padding-left: 10px;
+  margin: 20px 0;
+  font-size: 1.2em;
+  user-select: none;
+  outline: none;
 }
 
-.box1 , .box2 , .box3 , .resbox1 , .resbox2, .resbox3{
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 15px;
+// Boksektion
+.nyhet {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $secondary-color;
+
+  .nyhetsbild {
+    max-width: 150px;
+    height: auto;
+    margin-right: 15px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nyhetsinnehåll {
+    flex: 1;
+  }
 }
 
+// Responsiva Stilar
+@media (max-width: 768px) {
+  .nyhetsbild {
+    max-width: 100px;
+  }
 
-/* SARAS KLOKHETER */
-.box-content1 {
-    display: flex;
+  .nyhet {
     flex-direction: column;
-}
-
-.scrollbar-genre-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start, space-between;
-    list-style-type: none;
-
-}
-
-.genre-box {
-   border: 2px solid black;
-   width: 50%;
-   
-}
-/* SARAS KLOKHETER */
-
-.box-image , .resbox1 , .resbox2, .resbox3 {
-    width: 100px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
-}
-
-.box-content {
-    flex: 1; /* Allow text to take remaining space */
-}
-
-.box-content h2,
-.small-box-content h2 {
-    margin: 0 0 10px 0; /* Spacing for title */
-}
-
-/* Small Box Styles */
-.small-boxes {
-    display: flex;
-    justify-content: space-between; /* Space the boxes evenly */
-    margin: 20px;
-}
-
-.small-box1 , .small-box2 {
-    display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    padding: 15px;
-    width: calc(50% - 10px); /* Set width to half and account for spacing */
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
 
-.small-box-image {
-    width: 80px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
-}
-
-.small-box-content {
-    flex: 1; /* Allow text to take remaining space */
-}
-
-/* Responsive Styles for Small Boxes */
-@media (max-width: 768px) {
-    .small-boxes {
-        flex-direction: column; /* Stack small boxes vertically */
-        margin: 0 15px; /* Add horizontal margin for equal spacing */
+    .nyhetsinnehåll {
+      text-align: center;
     }
-
-    .small-box1 , .small-box2 {
-        width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
-        margin: 0 auto 15px auto; /* Center the box and add bottom margin */
-    }
-}
-
-
-
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .nav-list {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger menu */
-    }
+  }
 }
 
 footer {
-    margin-top: -15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: #f8f8f8;
+  margin-top: -15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #f8f8f8;
 }
