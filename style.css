@@ -183,7 +183,7 @@ nav {
 }
 
 /* SARAS KLOKHETER */
-.box-image, .resbox1, .resbox2, .resbox3 {
+.box-image, .resbox1, .resbox2, .resbox3, .calendar-box {
   width: 100px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
   margin-right: 15px; /* Space between image and text */
