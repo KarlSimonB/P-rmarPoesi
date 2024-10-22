@@ -106,7 +106,7 @@ nav {
     outline: none; /* Remove outline */
 }
 
-.ebox1 , .ebox2 , .ebox3 , .ebox4 , .ebox5 , .ebox6 {
+.ebox1 , .ebox2 , .ebox3 , .ebox4 , .ebox5 , .ebox6 , .kbox1 , .kbox2 , .kbox3 {
     display: flex;
     border: 1px solid #ccc;
     padding: 15px;
