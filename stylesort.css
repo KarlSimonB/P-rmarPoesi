@@ -1,6 +1,16 @@
+@charset "UTF-8";
+
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
+}
+
+.logo {
+  border-radius: 100%;
+  padding: 5px;
+  width: 170px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
 header {
@@ -9,41 +19,38 @@ header {
   align-items: center;
   padding: 10px;
   background-color: rgba(224, 224, 224, 0.548);
-  /* Links in nav desktop */
-  /* Hamburger Menu Styles */
-  /* Mobile Navigation Popup Menu Styles */
-  /* Display Navigation Links on Checkbox Checked */
-  /* Link Styles in Mobile Menu */
 }
-header .logo {
-  border-radius: 100%;
-  padding: 5px;
-  width: 170px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-}
-header .menu-toggle {
+
+.menu-toggle {
   opacity: 0;
 }
-header nav {
+
+nav {
   display: flex;
   align-items: center;
 }
-header .nav-list {
+
+.nav-list {
   list-style: none;
   display: flex; /* Show links by default on larger screens */
   margin: 0;
   padding: 0;
 }
-header .nav-list li {
+
+.nav-list li {
   margin-left: 20px;
 }
-header .nav-list a {
+
+/* Links in nav desktop */
+.nav-list a {
   text-decoration: none;
   color: rgb(49, 49, 49);
   font-size: x-large;
   font-weight: bold;
 }
-header .hamburger {
+
+/* Hamburger Menu Styles */
+.hamburger {
   display: none;
   background: none;
   border: none;
@@ -51,7 +58,9 @@ header .hamburger {
   cursor: pointer;
   padding: 20px;
 }
-header .nav-list-mobile {
+
+/* Mobile Navigation Popup Menu Styles */
+.nav-list-mobile {
   display: none; /* Hide links by default */
   position: absolute; /* Position it over the content */
   top: 60px; /* Adjust based on your header height */
@@ -62,13 +71,18 @@ header .nav-list-mobile {
   flex-direction: column; /* Stack links vertically */
   padding: 10px 0; /* Add some vertical padding */
 }
-header .menu-toggle:checked + .hamburger + .nav-list-mobile {
+
+/* Display Navigation Links on Checkbox Checked */
+.menu-toggle:checked + .hamburger + .nav-list-mobile {
   display: flex; /* Show links when the menu is toggled */
 }
-header .nav-list-mobile li {
+
+/* Link Styles in Mobile Menu */
+.nav-list-mobile li {
   padding: 10px 20px; /* Add padding for the links */
 }
-header .nav-list-mobile a {
+
+.nav-list-mobile a {
   text-decoration: none; /* Remove underline */
   color: #333; /* Dark text color */
   display: block; /* Make the entire area clickable */

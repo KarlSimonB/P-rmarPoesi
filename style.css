@@ -160,7 +160,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808)); */
+  background-image: linear-gradient(to right, rgba(240, 112, 112, 0.726), rgba(255, 148, 246, 0.808)); 
   border-radius: 5px;
   padding: 20px 50px;
   margin: 0px 8px 0px 0px;
