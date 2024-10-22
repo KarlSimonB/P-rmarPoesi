@@ -1,30 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pärmar & Poesi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pärmar & Poesi - Kontakta Oss</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <a href="index.html">
-            <img src="sources/rättlogo.png" alt="Logo" class="logo">
-          </a>
-        <nav>
-            <ul class="nav-list" id="navLinks">
-                <li><a href="Pärmar&Poesi/index.html">Hem</a></li>
-                <li><a href="erbjudanden.html">Erbjudanden</a></li>
-                <li><a href="kontakt.html">Kontakt & Hitta</a></li>
-            </ul>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">&#9776;</label>
-            <ul class="nav-list-mobile" id="navLinksMobile">
-                <li><a href="Pärmar&Poesi/index.html">Hem</a></li>
-                <li><a href="erbjudanden.html">Erbjudanden</a></li>
-                <li><a href="kontakt.html">Kontakt & Hitta</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-100">
+
+<header class="flex justify-between items-center p-5 bg-gray-300">
+    <img src="sources/logo.png" alt="Logo" class="w-40 rounded-full">
+    <nav>
+        <ul class="flex space-x-4">
+            <li><a href="Pärmar&Poesi/index.html" class="text-gray-800">Hem</a></li>
+            <li><a href="#kontakt" class="text-gray-800">Kontakta Oss</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="p-5">
+    <section id="kontakt">
+        <h2 class="text-2xl font-bold mb-4">Kontakta Oss</h2>
+        <form class="bg-white p-4 rounded shadow">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700">Namn:</label>
+                <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">E-post:</label>
+                <input type="email" id="email" name="email" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700">Meddelande:</label>
+                <textarea id="message" name="message" required class="w-full p-2 border rounded"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Skicka</button>
+        </form>
+    </section>
+</main>
+
+<footer class="flex justify-between items-center p-5 bg-gray-300">
+    <p>© Pärmar & Poesi</p>
+    <div class="flex space-x-2">
+        <a href="https://facebook.com"><img src="sources/facebook-app-symbol.png" alt="Facebook" class="w-6 h-6"></a>
+        <a href="https://instagram.com"><img src="sources/instagram.png" alt="Instagram" class="w-6 h-6"></a>
+        <a href="https://twitter.com"><img src="sources/twitter.png" alt="Twitter" class="w-6 h-6"></a>
+        <a href="https://threads.net"><img src="sources/threads.png" alt="Threads" class="w-6 h-6"></a>
+        <a href="https://youtube.com"><img src="sources/youtube.png" alt="YouTube" class="w-6 h-6"></a>
+    </div>
+</footer>
+
 </body>
 </html>
