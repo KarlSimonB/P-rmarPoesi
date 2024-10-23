@@ -11,12 +11,16 @@ $boxshadow: 0px 0px 10px 2px grey;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin layout-2 {
   display: flex;
   flex-direction: row;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin genre-boxes {
@@ -36,7 +40,10 @@ $boxshadow: 0px 0px 10px 2px grey;
   font-family: Arial, sans-serif;
   padding: 0;
   margin: 0;
-  overflow-y:scroll;
+  }
+
+@mixin scrollbar {
+  overflow-y: scroll;
 }
 
 // Style for the body and all content
@@ -162,9 +169,12 @@ main {
         
       }
 
-      .bokbox {
+      ul .scrollable-bokbox {
         @include layout-2();
         @include bok-box();
+        @include scrollbar();
+        padding: 0;
+        margin: 0;
 
       }
 
