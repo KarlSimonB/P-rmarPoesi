@@ -1,0 +1,427 @@
+$primarycolor: black;
+$primarybackground: white;
+$secondarybackground: #e0e0e08c;
+$boxshadow: 0px 0px 10px 2px grey;
+
+@mixin layout-1 {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+@mixin layout-2 {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+}
+
+@mixin genre-boxes {
+  @include layout-1();
+  font-family: Arial, sans-serif;
+  background-color: $secondarybackground;
+  box-shadow: $boxshadow;
+  margin: 30px 20px 30px 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+@mixin bok-box {
+  @include layout-2();
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+
+}
+@mixin quote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ffffff;
+  padding-left: 10px;
+  margin: 2px;
+  font-size: 1em;
+  user-select: none; /* Prevent text selection */
+  outline: none; /* Remove outline */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// main style all html sites
+// headern and footer
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  @include layout-1;
+  .logo {
+    border-radius: 100%;
+    padding: 5px;
+    width: 170px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    /* border: 1px solid #ddd; */
+    /* border-radius: 4px; */
+    /* padding: 5px; */
+    /* width: 100px; Adjust the width as needed */
+    /* height: auto; Maintain aspect ratio */
+  }
+}
+
+main {
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(224, 224, 224, 0.548);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex; /* Show links by default on larger screens */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.nav-list-mobile {
+  display: none;
+  position: absolute; /* Position it over the content */
+  top: 0px; /* Adjust based on your header height */
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 1; /* Ensure it covers other content */
+  flex-direction: column; /* Stack links vertically */
+  padding: 5px 0; /* Add some vertical padding */
+}
+
+.nav-list-mobile li {
+  padding: 15px 15px; /* Add padding for the links */
+}
+
+
+.nav-list-mobile a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark text color */
+  display: block; /* Make the entire area clickable */
+}
+
+.menu-toggle:checked + .hamburger + .nav-list-mobile {
+  display: flex; /* Show links when the menu is toggled */
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.hamburger1 {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: -30px;
+}
+
+
+
+.menu-toggle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block; /* Show hamburger menu */
+  }
+}
+
+@media (max-width: 768px) {
+  .small-boxes {
+    flex-direction: column; /* Stack small boxes vertically */
+    margin: 0 15px; /* Add horizontal margin for equal spacing */
+  }
+  .small-box1,
+  .small-box2 {
+    width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
+    margin: 0 auto 15px auto; /* Center the box and add bottom margin */
+  }
+}
+
+footer {
+  margin-right: 30px;
+  margin-left: 45px;
+  margin-top: -15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondarybackground;
+}
+
+img {
+  padding-right: 15px;
+}
+
+// SASS-CSS Style for the main site
+// ********************************
+
+//   First section on main site ****************************************************************************************************
+.main-text {
+  margin: 15px 0px 80px 15px;
+
+  .welcome-text {
+    font-size: x-larger;
+  }
+  .quote {
+    @include quote();
+  }
+}
+
+//   second section on main site ****************************************************************************************************
+.linkhtml3 {
+  text-decoration: none;
+  color: $primarycolor;
+  text-align: center;
+}
+
+// .boxes {
+//   @include layout-1();
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.resbox1,
+.resbox2,
+.resbox3,
+.resbox4,
+.resbox5,
+.resbox6,
+.resbox7,
+.resbox8,
+.resbox9,
+.resbox10 {
+  @include layout-2();
+  align-items: center;
+  box-shadow: $boxshadow;
+  padding: 15px;
+  margin: 0px 50px 50px 50px;
+  border-radius: 5px;
+  background-color: $primarybackground;
+}
+
+.box-content1 {
+  @include layout-1();
+}
+
+.box1-content-text {
+  margin-left: 5px;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.box1-p {
+  font-size: small;
+  margin-top: 2px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.scrollable-nav {
+  @include layout-2();
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 20px 20px;
+}
+
+.genre-box {
+  @include layout-2();
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(240, 112, 112, 0.726),
+    rgba(255, 148, 246, 0.808)
+  );
+  box-shadow: inset $secondarybackground 0px 0px 5px 2px;
+  list-style-type: none;
+  margin: 10px;
+  padding: 30px 20px;
+  border-radius: 5px;
+  width: 120px;
+  font-size: large;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+//   third section on main site ****************************************************************************************************
+
+.box3 {
+  text-align: center;
+  @include layout-1();
+
+  .news-box {
+    @include layout-2();
+    justify-content: center;
+  }
+  .news-header {
+    font-size: x-large;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: $primarycolor;
+  }
+
+  .emoji {
+    font-size: xx-large;
+  }
+  .news-p {
+    text-align: center;
+  }
+}
+
+//   last section on main site including kings choice and events ******************************************************************
+
+.small-boxes {
+  @include layout-2();
+  padding-bottom: 50px;
+}
+.small-box1,
+.small-box2 {
+    @include layout-1();
+    justify-content: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    align-items: center;
+    border: 1px solid #ccc;
+    box-shadow: $boxshadow;
+    padding: 15px;
+    width: calc(50% - 10px); /* Set width to half and account for spacing */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+  .small-box-image {
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right:0 ; /* Space between image and text */
+    padding-bottom: 5px;
+  }
+}
+
+// SASS-CSS Style for the sortiment site
+// *************************************
+
+main {
+  @include layout-1;
+  background-color: $primarybackground;
+  justify-content: space-between;
+
+  .sort-main-text {
+    margin: 50px;
+
+    h1 {
+      margin-bottom: 1px;
+      font-size: xx-large;
+    }
+
+    .paragraf-1 {
+      margin-top: 0%;
+    }
+  }
+
+  article {
+    .sortiment {
+      text-align: center;
+    }
+
+    .boxes {
+      @include layout-1();
+      @include genre-boxes;
+      list-style-type: none;
+    }
+
+    .bokbox {
+      @include layout-2();
+      @include bok-box();
+    }
+
+    li {
+      @include layout-2();
+      list-style-type: none;
+      width: 120px;
+      margin: 5px;
+      padding: 1px;
+    }
+
+    img {
+      width: 120px;
+    }
+  }
+}
+
+// *************************************
+// *************************************
+
+// Style for Top 10 site
+// *************************************
+
+// *************************************
+// *************************************
+
+// Style for book news site
+// *************************************
+
+// *************************************
+// *************************************
+
+// Style for event site
+// *************************************
+
+
+
+
+// *************************************
+// *************************************
+
+// Style for contact information site
+// *************************************
+
+// *************************************
+// *************************************
+
+// Style for extra, kings favorites site
+// *************************************
+
+// *************************************
+// *************************************
+
+/* Responsive Styles for Small Boxes */

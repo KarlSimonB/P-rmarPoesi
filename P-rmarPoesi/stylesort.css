@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(224, 224, 224, 0.548);
+  /* Links in nav desktop */
+  /* Hamburger Menu Styles */
+  /* Mobile Navigation Popup Menu Styles */
+  /* Display Navigation Links on Checkbox Checked */
+  /* Link Styles in Mobile Menu */
+}
+header .logo {
+  border-radius: 100%;
+  padding: 5px;
+  width: 170px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+header .menu-toggle {
+  opacity: 0;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header .nav-list {
+  list-style: none;
+  display: flex; /* Show links by default on larger screens */
+  margin: 0;
+  padding: 0;
+}
+header .nav-list li {
+  margin-left: 20px;
+}
+header .nav-list a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-size: x-large;
+  font-weight: bold;
+}
+header .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+}
+header .nav-list-mobile {
+  display: none; /* Hide links by default */
+  position: absolute; /* Position it over the content */
+  top: 60px; /* Adjust based on your header height */
+  left: 0;
+  right: 0;
+  background-color: #d3d3d3; /* Light gray background color */
+  z-index: 1; /* Ensure it covers other content */
+  flex-direction: column; /* Stack links vertically */
+  padding: 10px 0; /* Add some vertical padding */
+}
+header .menu-toggle:checked + .hamburger + .nav-list-mobile {
+  display: flex; /* Show links when the menu is toggled */
+}
+header .nav-list-mobile li {
+  padding: 10px 20px; /* Add padding for the links */
+}
+header .nav-list-mobile a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark text color */
+  display: block; /* Make the entire area clickable */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  justify-content: space-between;
+}
+main .sort-main-text {
+  margin: 50px;
+}
+main .sort-main-text h1 {
+  margin-bottom: 1px;
+  font-size: xx-large;
+}
+main .sort-main-text .paragraf-1 {
+  margin-top: 0%;
+}
+main article .sortiment {
+  text-align: center;
+}
+main article .boxes {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: rgba(224, 224, 224, 0.5490196078);
+  box-shadow: 0px 0px 10px 2px grey;
+  margin: 30px 20px 30px 20px;
+  padding: 20px;
+  border-radius: 5px;
+  list-style-type: none;
+}
+main article .bokbox {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+main article li {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  list-style-type: none;
+  width: 120px;
+  margin: 5px;
+  padding: 1px;
+}
+main article img {
+  width: 120px;
+}
+
+footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(224, 224, 224, 0.5490196078);
+}
+
+/* Responsive Styles for Small Boxes */
+@media (max-width: 768px) {
+  .small-boxes {
+    flex-direction: column; /* Stack small boxes vertically */
+    margin: 0 15px; /* Add horizontal margin for equal spacing */
+  }
+  .small-box1, .small-box2 {
+    width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
+    margin: 0 auto 15px auto; /* Center the box and add bottom margin */
+  }
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block; /* Show hamburger menu */
+  }
+  .welcome-text {
+    padding: 0;
+    margin: 0;
+    font-size: x-large;
+  }
+  .main-text {
+    margin: 30px 0px 80px 35px;
+  }
+}/*# sourceMappingURL=stylesort.css.map */
