@@ -1,4 +1,4 @@
-$primarycolor: rgb(0, 0, 0);
+$primarycolor: black;
 $primarybackground: white;
 $secondarybackground: #e0e0e08c;
 $boxshadow: 0px 0px 10px 2px grey;
@@ -32,6 +32,7 @@ $boxshadow: 0px 0px 10px 2px grey;
   font-family: Arial, sans-serif;
   padding: 0;
   margin: 0;
+
 }
 @mixin quote {
   font-style: italic;
@@ -40,6 +41,7 @@ $boxshadow: 0px 0px 10px 2px grey;
   padding-left: 10px;
   margin: 2px;
   font-size: 1em;
+  user-select: none; /* Prevent text selection */
   outline: none; /* Remove outline */
 }
 * {
@@ -66,6 +68,10 @@ body {
   }
 }
 
+main {
+  justify-content: center;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -87,7 +93,7 @@ nav {
 }
 
 .nav-list li {
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .nav-list a {
@@ -105,15 +111,14 @@ nav {
   right: 0;
   background-color: rgb(255, 255, 255);
   z-index: 1; /* Ensure it covers other content */
-  flex-direction: row; /* Stack links vertically */
-  padding: 15px 0; /* Add some vertical padding */
-  font-size: x-large; 
-
+  flex-direction: column; /* Stack links vertically */
+  padding: 5px 0; /* Add some vertical padding */
 }
 
 .nav-list-mobile li {
   padding: 15px 15px; /* Add padding for the links */
 }
+
 
 .nav-list-mobile a {
   text-decoration: none; /* Remove underline */
@@ -134,69 +139,69 @@ nav {
   padding: 20px;
 }
 
+.hamburger1 {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: -30px;
+}
 
+
+
+.menu-toggle {
+  opacity: 0;
+}
 
 @media (max-width: 768px) {
   .nav-list {
     display: none; /* Hide links by default on mobile */
     flex-direction: column;
   }
-  
-  .nav-list-mobile {
-    display: flex; /* Show mobile links when toggled */
-  }
-
   .hamburger {
     display: block; /* Show hamburger menu */
   }
-
-  .menu-toggle:checked + .hamburger + .nav-list-mobile {
-    display: flex; /* Show links when the menu is toggled */
-  }
-  
-  /* Optional: Add some styling to the mobile links */
-  .nav-list-mobile li {
-    text-align: center; /* Center align mobile links */
-    margin: 0; /* Remove margin */
-  }
 }
 
-.menu-toggle {
-  opacity: 0;
+@media (max-width: 768px) {
+  .small-boxes {
+    flex-direction: column; /* Stack small boxes vertically */
+    margin: 0 15px; /* Add horizontal margin for equal spacing */
+  }
+  .small-box1,
+  .small-box2 {
+    width: calc(100% - 30px); /* Ensure boxes are slightly narrower */
+    margin: 0 auto 15px auto; /* Center the box and add bottom margin */
+  }
 }
-
 
 footer {
-   margin: 10px; 
+  margin-right: 30px;
+  margin-left: 45px;
+  margin-top: -15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $primarybackground;
+  background-color: $secondarybackground;
+}
 
-  img {
-    padding-right: 15px;
-  }
-
-  .footer-links {
-    @include layout-2();
-  }
+img {
+  padding-right: 15px;
 }
 
 // SASS-CSS Style for the main site
 // ********************************
 
 //   First section on main site ****************************************************************************************************
-.maintext {
+.main-text {
   margin: 15px 0px 80px 15px;
 
   .welcome-text {
-    font-size: xx-large; 
-    padding: 30px 0px 2px 30px;
+    font-size: x-larger;
   }
-
   .quote {
     @include quote();
-    padding: 1px 0px 2px 30px;
   }
 }
 
@@ -209,6 +214,7 @@ footer {
 
 // .boxes {
 //   @include layout-1();
+
 .box1,
 .box2,
 .box3,
@@ -223,8 +229,7 @@ footer {
 .resbox7,
 .resbox8,
 .resbox9,
-.resbox10 
-{
+.resbox10 {
   @include layout-2();
   align-items: center;
   box-shadow: $boxshadow;
@@ -238,25 +243,13 @@ footer {
   @include layout-1();
 }
 
-
-.box-content2 , .box-content4 , .box-content5 {
-  font-size: xx-large;
-  padding-left: 15px;
-}
-
-.box-content2 p , .box-content4 p , .box-content5 p{
-  padding-top: 5px;
-  padding-left: 5px;
-  font-size: medium;
-}
-
-.box1-content-text , .box4-content-text , .box5-content-text {
+.box1-content-text {
   margin-left: 5px;
   font-size: xx-large;
   text-align: center;
 }
 
-.box1-p ,  .box4-p , .box5-p  {
+.box1-p {
   font-size: small;
   margin-top: 2px;
   margin-left: 5px;
@@ -273,64 +266,77 @@ footer {
 .genre-box {
   @include layout-2();
   justify-content: center;
-  width: 50vw;
-  
   background-image: linear-gradient(
     to right,
     rgba(240, 112, 112, 0.726),
     rgba(255, 148, 246, 0.808)
   );
-
-  box-shadow: inset rgba(219, 121, 121, 0.24) 0px 0px 5px 2px;
+  box-shadow: inset $secondarybackground 0px 0px 5px 2px;
   list-style-type: none;
-  margin: 25px;
+  margin: 10px;
   padding: 30px 20px;
   border-radius: 5px;
-  width: 250px;
-  font-size: larger;
+  width: 120px;
+  font-size: large;
   text-transform: uppercase;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-.genre-box:hover {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  transform: scale(1.2, 1.2)
-
-}
 //   third section on main site ****************************************************************************************************
 
-
-
-//   last section on main site including kings choice and events ******************************************************************
-.box5-content , .box4-content , .box3-content {
-  @include layout-1();
-  justify-content: center;
-  justify-content: space-around;
+.box3 {
   text-align: center;
-  margin-right: 50px;
-  margin-left: 50px;
-  align-items: center;
-  border: 1px solid #ccc;
-  box-shadow: $boxshadow;
-  padding: 10px;
-  width: calc(50% - 10px); /* Set width to half and account for spacing */
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
+  @include layout-1();
 
-.box4 , .box5  {
-  img {
-    width: 120px;
+  .news-box {
+    @include layout-2();
+    justify-content: center;
+  }
+  .news-header {
+    font-size: x-large;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: $primarycolor;
+  }
+
+  .emoji {
+    font-size: xx-large;
+  }
+  .news-p {
+    text-align: center;
   }
 }
 
-.emoji {
-    font-size: 100px;
-    color: red;
-    vertical-align: middle;
-  
+//   last section on main site including kings choice and events ******************************************************************
+
+.small-boxes {
+  @include layout-2();
+  padding-bottom: 50px;
 }
+.small-box1,
+.small-box2 {
+    @include layout-1();
+    justify-content: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    align-items: center;
+    border: 1px solid #ccc;
+    box-shadow: $boxshadow;
+    padding: 15px;
+    width: calc(50% - 10px); /* Set width to half and account for spacing */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+  .small-box-image {
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right:0 ; /* Space between image and text */
+    padding-bottom: 5px;
+  }
+}
+
 // SASS-CSS Style for the sortiment site
 // *************************************
 
@@ -388,125 +394,41 @@ main {
 // Style for Top 10 site
 // *************************************
 
-.rec-welcome {
-  display: flex;
-  flex-direction: column;
-  margin: 45px 100px 30px 50px ;
-font-size: xx-large;
-text-align: start; 
-}
-
-
-.nummer {
-
-  font-size: x-large;
-  padding-right: 15px;
-}
-
-.title-res {  
-  font-size: x-large;
-  padding-left: 15px;
-  
-}
-
-.p-res {
-  padding-top: 5px;
-  padding-left: 15px
-}
 // *************************************
 // *************************************
 
 // Style for book news site
 // *************************************
-// Design med tailwind
-
 
 // *************************************
 // *************************************
 
 // Style for event site
 // *************************************
-
-  
-.welcome-event {
-    display: flex;
-    flex-direction: column;
-    margin: 45px 100px 30px 100px ;
-    font-size: xx-large;
-    text-align: start; 
-  
-  .main-text {
-    margin: 15px 0px 20px 15px;
-  }
-}
-
-
-  .ebox1, .ebox2, .ebox3, .ebox4, .ebox5, .ebox6
-{
+.ebox1 , .ebox2 , .ebox3 , .ebox4 , .ebox5 , .ebox6 {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   border: 1px solid #ccc;
   padding: 15px;
+  margin-bottom: 15px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 1px rgb(163, 163, 163);
   background-color: #f9f9f9;
-  margin: 0px 100px 45px 100px;
-
-  .event-date{
-    font-size: x-large;
-    
-  }
-  .event-title {
-    font-size: larger;
-  }
+  margin: 45px 100px 45px 100px; 
 }
 // *************************************
 // *************************************
 
 // Style for contact information site
 // *************************************
-.kontaktli {
-  padding: 20px;
 
-  .h1-contact{
-    font-weight: 700;
-  }
-}
-
-.kontaktaoss{
-  font-size: x-large;
-  font-weight: bolder;
-}
 // *************************************
 // *************************************
 
 // Style for extra, kings favorites site
 // *************************************
-.boxes {
-@include layout-1();
-    
-.kingbox { 
-    @include layout-2();
-    justify-content: space-around;
-    height: 30vh;
-}
 
-.kingnummer {
-    font-size: larger;
-    font-weight: bold;
-}
+// *************************************
+// *************************************
 
-.king-img {
-    width: 100px;
-}
-
-.kingcontent1{
-    width: 250px;
-    font-size: 500;
-}
-
-
-}
-
-
-
+/* Responsive Styles for Small Boxes */

@@ -3,56 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="books, reading, bookevent">
+    <meta name="description" content="Pärmar och Poesi, boksida för alla åldrar. Vi har det du söker efter">
+    <meta name="author" content="Daniel, Therese, Sara och Simon">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pärmar & Poesi - Kontakta Oss</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-
-<header class="flex justify-between items-center p-5 bg-gray-300">
-    <img src="sources/logo.png" alt="Logo" class="w-40 rounded-full">
-    <nav>
-        <ul class="flex space-x-4">
-            <li><a href="Pärmar&Poesi/index.html" class="text-gray-800">Hem</a></li>
-            <li><a href="#kontakt" class="text-gray-800">Kontakta Oss</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main class="p-5">
-    <section id="kontakt">
-        <h2 class="text-2xl font-bold mb-4">Kontakta Oss</h2>
-        <form class="bg-white p-4 rounded shadow">
-            <div class="mb-4">
-                <label for="name" class="block text-gray-700">Namn:</label>
-                <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block text-gray-700">E-post:</label>
-                <input type="email" id="email" name="email" required class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label for="message" class="block text-gray-700">Meddelande:</label>
-                <textarea id="message" name="message" required class="w-full p-2 border rounded"></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Skicka</button>
-        </form>
-    </section>
-</main>
-
-<footer class="flex justify-between items-center p-5 bg-gray-300">
-    <p>© Pärmar & Poesi</p>
-    <div class="flex space-x-2">
-        <a href="https://facebook.com"><img src="sources/facebook-app-symbol.png" alt="Facebook" class="w-6 h-6"></a>
-        <a href="https://instagram.com"><img src="sources/instagram.png" alt="Instagram" class="w-6 h-6"></a>
-        <a href="https://twitter.com"><img src="sources/twitter.png" alt="Twitter" class="w-6 h-6"></a>
-        <a href="https://threads.net"><img src="sources/threads.png" alt="Threads" class="w-6 h-6"></a>
-        <a href="https://youtube.com"><img src="sources/youtube.png" alt="YouTube" class="w-6 h-6"></a>
-    </div>
-</footer>
-
-=======
 <body>
+
+
     <header>
         <a href="index.html">
             <img src="sources/logo.png" alt="Logo" class="logo">
@@ -65,49 +25,54 @@
             </ul>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">&#9776;</label>
-            <ul class="nav-list-mobile" id="navLinksMobile">
+            <div class="nav-list-mobile" id="navLinksMobile">
+                <a href="index.html">
+                    <img src="sources/logo.png" alt="Logo" class="logo">
+                  </a>
+                <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="sortiment.html">Sortiment</a></li>
                 <li><a href="kontakt.html">Kontakt & Hitta</a></li>
-            </ul>
+                </ul>
+            </div>
         </nav>
     </header>
 
 
 
-<article class="kbox1">
-        <h1>Pärmar & Poesi Grönby</h1>
-        <ul class="kontaktli">
+<!-- <article class="kbox1"> -->
+
+<article class="kontaktli">
+        <h1 class="h1-contact">Pärmar & Poesi Grönby</h1>
+        <ul>
             <li>Öppettider: Mån-Fre 10-18 Lör 10-14 Sön Stängt Lunchstängt 12-13</li>
             <li>Adress: Grönbyvägen 14, 43141 Grönby</li>
             <li>Telefon: 0223-11777</li>
             <li>Mail: PPgronby@mail.se</li>
         </ul>
-    </div>
 </article>
+
 <article class="kontaktli">
-    <h1>Pärmar & Poesi Blåby</h1>
+    <h1 class="h1-contact">Pärmar & Poesi Blåby</h1>
     <ul>
         <li>Öppettider: Mån-Fre 10-18 Lör-Sön 10-13 Lunchstängt 12-13</li>
         <li>Adress: Blågatan 26, 71341 Blåby</li>
         <li>Telefon: 0223-22777</li>
         <li>Mail: PPblaby@mail.se</li>
     </ul>
-</div>
 </article>
+
 <article class="kontaktli">
-<h1>Pärmar & Poesi Rödby</h1>
+<h1 class="h1-contact">Pärmar & Poesi Rödby</h1>
 <ul>
     <li>Öppettider: Mån-Fre 10-17 Lör-Sön Stängt Lunchstängt 12-13</li>
     <li>Adress: Rödavägen 2, 15683 Rödby</li>
     <li>Telefon: 0223-66777</li>
     <li>Mail: PProdby@mail.se</li>
 </ul>
-</div>
 </article>
-</section>
 
-<main class="p-5">
+<main class="p-5 m-5 rounded bg-gradient-to-r from-pink-200 to-red-200 shadow-lg">
     <section id="kontakt">
         <h2 class="kontaktaoss">Kontakta Oss</h2>
         <form class="kontaktform">
@@ -129,14 +94,14 @@
     </main>
 
     <footer>
-        <p>© Pärmar & Poesi</p>
-        <article class="footer-links">
+        <p class="footer-p">© Pärmar & Poesi</p>
+        <nav class="footer-links">
             <img src="sources/facebook-app-symbol.png" alt="facebook-link">
             <img src="sources/instagram.png" alt="instagram-link">
             <img src="sources/twitter.png" alt="twitter-link">
-            <img src="sources/threads.png" alt="twitter-link">
-            <img src="sources/youtube.png" alt="twitter-link">
-    </article>
+            <img src="sources/threads.png" alt="threads-link">
+            <img src="sources/youtube.png" alt="youtube-link">
+        </nav>
     </footer>
     
 </body>

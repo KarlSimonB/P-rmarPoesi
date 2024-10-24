@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="books, reading, bookevent">
+    <meta name="description" content="Pärmar och Poesi, boksida för alla åldrar. Vi har det du söker efter">
+    <meta name="author" content="Daniel, Therese, Sara och Simon">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Pärmar & Poesi - Nyheter</title>
-    <link rel="stylesheet" href="updatestyle.css"> <!-- Länka till din SASS-kompilerade CSS om du har det -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body class="font-sans bg-gray-100">
 
@@ -23,11 +26,16 @@
             </ul>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">&#9776;</label>
-            <ul class="nav-list-mobile" id="navLinksMobile">
+            <div class="nav-list-mobile" id="navLinksMobile">
+                <a href="index.html">
+                    <img src="sources/logo.png" alt="Logo" class="logo">
+                  </a>
+                <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="sortiment.html">Sortiment</a></li>
                 <li><a href="kontakt.html">Kontakt & Hitta</a></li>
-            </ul>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -81,7 +89,7 @@
 
             <!-- Bok 5 -->
             <article class="flex bg-white border border-gray-300 rounded-lg p-4 mb-4 shadow-md">
-                <img src="Sources/a court of thorns.jpg" alt="Omslaget till A Court of Thorns and Roses av Sarah J. Maas" class="w-32 h-auto rounded-md shadow-lg mr-4">
+                <img src="thorns.jpg" alt="Omslaget till A Court of Thorns and Roses av Sarah J. Maas" class="w-32 h-auto rounded-md shadow-lg mr-4">
                 <div class="flex-1">
                     <h2 class="text-xl font-semibold">A Court of Thorns and Roses</h2>
                     <h3 class="text-md">Författare: Sarah J. Maas</h3>

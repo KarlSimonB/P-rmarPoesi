@@ -1,0 +1,60 @@
+// Style för nyhetssidan
+.news-section {
+  @include layout-1();
+  background-color: $secondarybackground;
+  margin: 30px 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: $boxshadow;
+
+  .news-item {
+    @include layout-2();
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: $primarybackground;
+
+    .news-image {
+      max-width: 150px;
+      height: auto;
+      margin-right: 15px;
+      border-radius: 5px;
+      box-shadow: $boxshadow;
+    }
+
+    .news-content {
+      flex: 1;
+
+      h2 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Responsiva Stilar
+@media (max-width: 768px) {
+  .news-section {
+
+    .news-item {
+      flex-direction: column;
+      align-items: center;
+
+      .news-content {
+        text-align: center;
+      }
+
+      .news-image {
+        max-width: 100px;
+      }
+      
+    }
+  }
+}
